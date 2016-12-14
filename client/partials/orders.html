@@ -1,0 +1,41 @@
+<h1>Orders</h1>
+
+<h3>Add a new order</h3>
+<form ng-submit="add()">
+	<p>Customer: 
+		<select ng-model="newOrder._customer">
+			<option ng-repeat="customer in customers" value="{{ customer.name }}">{{customer.name}}</option>
+		</select></p>
+	<p>Item:
+		<select ng-model="newOrder._item">
+			<option ng-repeat="product in products" value="{{ product.name }}">{{ product.name }}</option>
+		</select> 
+		Quantity: <input type="number" ng-model="newOrder.quantity" value="1"> </p>
+	<input type="submit" value="Order">
+</form>
+
+<br>
+<hr>
+<br>
+
+<form ng-submit="search()">
+	<p><input type="text" ng-model="searchOrders" placeholder="Search...">
+	<input type="submit" value="Search"></p>
+</form>
+
+<table width="100%">
+	<thead>
+		<td><strong>Customer Name</strong></td>
+		<td><strong>Product</strong></td>
+		<td><strong>Quantity</strong></td>
+		<td><strong>Order Date</strong></td>
+	</thead>
+	<tr ng-repeat="order in orders | filter:filter track by $index">
+		<td>{{ order._customer.name }}</td>
+		<td>{{ order._item.name }}</td>
+		<td>{{ order.quantity }} </td>
+		<td>{{ order.createdAt }}</td>
+	</tr> 
+
+</table>
+

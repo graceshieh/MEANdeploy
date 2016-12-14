@@ -1,0 +1,28 @@
+<!DOCTYPE HTML>
+<html ng-app="app" lang="en">
+<head>
+	<meta charset = "UTF-8">
+	<title>Mini Store</title>
+	<link rel="stylesheet" type="text/css" href="js/styles.css">
+	<script src="angular/angular.js" charset="UTF-8"></script>
+	<script src="angular-route/angular-route.js" charset="UTF-8"></script>
+	<script src="js/config.js" charset="utf-8"></script>
+
+	<script src="js/controllers/indexController.js" charset="utf-8"></script>
+	<script src="js/controllers/customersController.js" charset="utf-8"></script>
+	<script src="js/controllers/productsController.js" charset="utf-8"></script>
+	<script src="js/controllers/ordersController.js" charset="utf-8"></script>
+	
+	<script src="js/factories/customersFactory.js" charset="utf-8"></script>
+	<script src="js/factories/productsFactory.js" charset="utf-8"></script>
+	<script src="js/factories/ordersFactory.js" charset="utf-8"></script>
+
+</head>
+<body>
+	<a href="/">Dashboard</a> | <a href="#!/products">Products</a> | <a href="#!/orders">Orders</a> | <a href="#!/customers">Customers</a> | <a href="#!/settings">Settings</a> 
+	
+	<div ng-view=''>
+
+	</div> 
+</body>
+</html>
